@@ -1,12 +1,14 @@
 //
 //  ZLImageEditor.h
-//  ZLImageEditor
+//  LWPhotoEditor
 //
-//  Created by long on 2020/11/23.
+//  Created by devtools-logicwind on 2025/3/03.
+//
+//  Copyright (c) 2025 devtools-logicwind <devtools@logicwind.com>
 //
 
 #import <Foundation/Foundation.h>
-#import <ZLImageEditor/ZLWeakProxy.h>
+#import <LWPhotoEditor/ZLWeakProxy.h>
 
 //! Project version number for ZLImageEditor.
 FOUNDATION_EXPORT double ZLImageEditorVersionNumber;

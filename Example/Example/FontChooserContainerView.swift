@@ -2,11 +2,11 @@
 //  FontChooserContainerView.swift
 //  Example
 //
-//  Created by Bartosz on 10/05/2022.
+//  Created by devtools-logicwind on 2025/3/03.
 //
 
 import UIKit
-import ZLImageEditor
+import LWPhotoEditor
 
 class FontChooserContainerView: UIView, ZLTextFontChooserDelegate {
     static let baseViewH: CGFloat = 400

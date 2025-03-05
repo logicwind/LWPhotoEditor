@@ -1,10 +1,10 @@
 //
-//  String+ZLImageEditor.swift
-//  ZLImageEditor
+//  UIGraphicsImageRenderer+LWPhotoEditor.swift
+//  LWPhotoEditor
 //
-//  Created by long on 2020/8/18.
+//  Created by devtools-logicwind on 2025/3/03.
 //
-//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//  Copyright (c) 2025 devtools-logicwind <devtools@logicwind.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,20 +24,25 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import Foundation
 import UIKit
 
-extension ZLImageEditorWrapper where Base == String {
-    func boundingRect(font: UIFont, limitSize: CGSize) -> CGSize {
-        let style = NSMutableParagraphStyle()
-        style.lineBreakMode = .byCharWrapping
+public extension ZLImageEditorWrapper where Base: UIGraphicsImageRenderer {
+    static func renderImage(
+        size: CGSize,
+        formatConfig: ((UIGraphicsImageRendererFormat) -> Void)? = nil,
+        imageActions: ((CGContext) -> Void)
+    ) -> UIImage {
+        let format: UIGraphicsImageRendererFormat
+        if #available(iOS 11.0, *) {
+            format = .preferred()
+        } else {
+            format = .default()
+        }
+        formatConfig?(format)
         
-        let att = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: style]
-        
-        let attContent = NSMutableAttributedString(string: base, attributes: att)
-        
-        let size = attContent.boundingRect(with: limitSize, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil).size
-        
-        return CGSize(width: ceil(size.width), height: ceil(size.height))
+        let renderer = UIGraphicsImageRenderer(size: size, format: format)
+        return renderer.image { context in
+            imageActions(context.cgContext)
+        }
     }
 }

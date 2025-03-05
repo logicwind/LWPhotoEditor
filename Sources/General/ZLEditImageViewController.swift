@@ -1,10 +1,10 @@
 //
 //  ZLEditImageViewController.swift
-//  ZLImageEditor
+//  LWPhotoEditor
 //
-//  Created by long on 2020/8/26.
+//  Created by devtools-logicwind on 2025/3/03.
 //
-//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//  Copyright (c) 2025 devtools-logicwind <devtools@logicwind.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -557,7 +557,7 @@ open class ZLEditImageViewController: UIViewController {
         redoBtn.frame = CGRect(x: view.zl.width - 15 - 30, y: insets.top, width: 30, height: 30)
         undoBtn.frame = CGRect(x: redoBtn.zl.left - 15 - 30, y: insets.top, width: 30, height: 30)
         
-        eraserBtn.frame = CGRect(x: 20, y: 30 + (drawColViewH - 36) / 2, width: 36, height: 36)
+        eraserBtn.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
         eraserBtnBgBlurView.frame = eraserBtn.frame
         eraserLineView.frame = CGRect(x: eraserBtn.zl.right + 11, y: eraserBtn.frame.midY - 10, width: 1, height: 20)
         drawColorCollectionView?.frame = CGRect(x: eraserLineView.zl.right + 11, y: 30, width: view.zl.width - eraserLineView.zl.right - 31, height: drawColViewH)
@@ -688,23 +688,94 @@ open class ZLEditImageViewController: UIViewController {
     func setupUI() {
         view.backgroundColor = .black
         
-        view.addSubview(mainScrollView)
-        mainScrollView.addSubview(containerView)
-        containerView.addSubview(imageView)
-        containerView.addSubview(drawingImageView)
-        containerView.addSubview(stickersContainer)
-        
+        // Add topShadowView
         view.addSubview(topShadowView)
         topShadowView.layer.addSublayer(topShadowLayer)
         topShadowView.addSubview(cancelBtn)
         topShadowView.addSubview(undoBtn)
         topShadowView.addSubview(redoBtn)
         
+        // Add mainScrollView
+        view.addSubview(mainScrollView)
+        mainScrollView.addSubview(containerView)
+        containerView.addSubview(imageView)
+        containerView.addSubview(drawingImageView)
+        containerView.addSubview(stickersContainer)
+        
+        // Add bottomShadowView
         view.addSubview(bottomShadowView)
         bottomShadowView.layer.addSublayer(bottomShadowLayer)
         bottomShadowView.addSubview(editToolCollectionView)
         bottomShadowView.addSubview(doneBtn)
         
+        
+        // Constraints for topShadowView
+        topShadowView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topShadowView.topAnchor.constraint(equalTo: view.topAnchor),
+            topShadowView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topShadowView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topShadowView.heightAnchor.constraint(equalToConstant: 100) // Adjust height as needed
+        ])
+        
+        // Constraints for mainScrollView (middle screen)
+        mainScrollView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            mainScrollView.topAnchor.constraint(equalTo: topShadowView.bottomAnchor),
+            mainScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mainScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            mainScrollView.bottomAnchor.constraint(equalTo: bottomShadowView.topAnchor)
+        ])
+        
+        // Constraints for containerView inside mainScrollView
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: mainScrollView.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
+            containerView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor),
+            containerView.heightAnchor.constraint(equalTo: mainScrollView.heightAnchor)
+        ])
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        ])
+        
+        // Constraints for bottomShadowView
+        bottomShadowView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            bottomShadowView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomShadowView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomShadowView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            bottomShadowView.heightAnchor.constraint(equalToConstant: 124)
+        ])
+        
+        // Constraints for editToolCollectionView and doneBtn inside bottomShadowView
+        editToolCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        doneBtn.translatesAutoresizingMaskIntoConstraints = false
+        
+        doneBtn.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            editToolCollectionView.leadingAnchor.constraint(equalTo: bottomShadowView.leadingAnchor, constant: 16),
+            editToolCollectionView.trailingAnchor.constraint(equalTo: doneBtn.leadingAnchor, constant: -16),
+            editToolCollectionView.centerYAnchor.constraint(equalTo: bottomShadowView.centerYAnchor),
+            editToolCollectionView.heightAnchor.constraint(equalToConstant: 60),
+            
+            doneBtn.trailingAnchor.constraint(equalTo: bottomShadowView.trailingAnchor, constant: -16),
+            doneBtn.centerYAnchor.constraint(equalTo: bottomShadowView.centerYAnchor),
+        ])
+        
+        doneBtn.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        
+        //         Additional setup for tools (draw, filter, adjust, mosaic, imageSticker, textSticker) can be added here
+        //         ...
         if tools.contains(.draw) {
             bottomShadowView.addSubview(eraserBtnBgBlurView)
             bottomShadowView.addSubview(eraserBtn)
@@ -727,7 +798,17 @@ open class ZLEditImageViewController: UIViewController {
             drawCV.delegate = self
             drawCV.dataSource = self
             drawCV.isHidden = true
+            
+            drawCV.translatesAutoresizingMaskIntoConstraints = false
+            // eraserBtn.translatesAutoresizingMaskIntoConstraints = false
+            
             bottomShadowView.addSubview(drawCV)
+            NSLayoutConstraint.activate([
+                drawCV.topAnchor.constraint(equalTo: bottomShadowView.topAnchor, constant:0),
+                drawCV.leadingAnchor.constraint(equalTo: eraserLineView.trailingAnchor, constant:8),
+                drawCV.trailingAnchor.constraint(equalTo: bottomShadowView.trailingAnchor, constant:0),
+                drawCV.bottomAnchor.constraint(equalTo: doneBtn.topAnchor, constant:0),
+            ])
             
             ZLDrawColorCell.zl.register(drawCV)
             drawColorCollectionView = drawCV
@@ -859,9 +940,9 @@ open class ZLEditImageViewController: UIViewController {
             }
         }
         
-        let tapGes = UITapGestureRecognizer(target: self, action: #selector(tapAction(_:)))
-        tapGes.delegate = self
-        view.addGestureRecognizer(tapGes)
+        // let tapGes = UITapGestureRecognizer(target: self, action: #selector(tapAction(_:)))
+        // tapGes.delegate = self
+        // view.addGestureRecognizer(tapGes)
         
         view.addGestureRecognizer(panGes)
         mainScrollView.panGestureRecognizer.require(toFail: panGes)
@@ -1797,6 +1878,7 @@ extension ZLEditImageViewController: UIScrollViewDelegate {
 
 extension ZLEditImageViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       
         if collectionView == editToolCollectionView {
             return tools.count
         } else if collectionView == drawColorCollectionView {
@@ -1867,6 +1949,35 @@ extension ZLEditImageViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Deactivate constraints safely
+        NSLayoutConstraint.deactivate(containerView.constraints)
+        NSLayoutConstraint.deactivate(imageView.constraints)
+        
+        // Remove constraints related to containerView from its superview
+        if let superview = containerView.superview {
+            for constraint in superview.constraints {
+                if constraint.firstItem as? UIView == containerView || constraint.secondItem as? UIView == containerView {
+                    superview.removeConstraint(constraint)
+                }
+            }
+        }
+        
+        if let superview = imageView.superview {
+            for constraint in superview.constraints {
+                if constraint.firstItem as? UIView == imageView || constraint.secondItem as? UIView == imageView {
+                    superview.removeConstraint(constraint)
+                }
+            }
+        }
+        
+        // Enable manual frame adjustments
+        containerView.translatesAutoresizingMaskIntoConstraints = true
+        imageView.translatesAutoresizingMaskIntoConstraints = true
+        
+        // Force layout update
+        view.setNeedsLayout()
+        view.layoutIfNeeded()
+        
         if collectionView == editToolCollectionView {
             let toolType = tools[indexPath.row]
             switch toolType {

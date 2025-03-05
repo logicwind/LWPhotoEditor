@@ -1,10 +1,10 @@
 //
-//  CGFloat+ZLImageEditor.swift
-//  ZLImageEditor
+//  Cell+LWPhotoEditor.swift
+//  LWPhotoEditor
 //
-//  Created by long on 2020/11/10.
+//  Created by devtools-logicwind on 2025/3/03.
 //
-//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//  Copyright (c) 2025 devtools-logicwind <devtools@logicwind.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +24,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import AVKit
+import UIKit
 
-extension ZLImageEditorWrapper where Base == CGFloat {
-    var toPi: CGFloat {
-        return base / 180 * .pi
+extension ZLImageEditorWrapper where Base: UICollectionViewCell {
+    static var identifier: String {
+        NSStringFromClass(Base.self)
+    }
+    
+    static func register(_ collectionView: UICollectionView) {
+        collectionView.register(Base.self, forCellWithReuseIdentifier: identifier)
     }
 }

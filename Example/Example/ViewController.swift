@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import ZLImageEditor
+import LWPhotoEditor
 
 class ViewController: UIViewController {
     var editImageToolView: UIView!

@@ -2,11 +2,11 @@
 //  ImageStickerContainerView.swift
 //  Example
 //
-//  Created by long on 2020/11/20.
+//  Created by devtools-logicwind on 2025/3/03.
 //
 
 import UIKit
-import ZLImageEditor
+import LWPhotoEditor
 
 class ImageStickerContainerView: UIView, ZLImageStickerContainerDelegate {
     

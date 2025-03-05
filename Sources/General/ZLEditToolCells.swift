@@ -1,8 +1,10 @@
 //
 //  ZLEditToolCells.swift
-//  ZLImageEditor
+//  LWPhotoEditor
 //
-//  Created by long on 2021/12/21.
+//  Created by devtools-logicwind on 2025/3/03.
+//
+//  Copyright (c) 2025 devtools-logicwind <devtools@logicwind.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal

@@ -1,8 +1,8 @@
 //
 //  ZLAdjustSlider.swift
-//  ZLImageEditor
+//  LWPhotoEditor
 //
-//  Created by long on 2021/12/17.
+//  Created by devtools-logicwind on 2025/3/03.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal

@@ -1,10 +1,10 @@
 //
-//  Cell+ZLImageEditor.swift
-//  ZLImageEditor
+//  UIView+LWPhotoEditor.swift
+//  LWPhotoEditor
 //
-//  Created by long on 2020/8/13.
+//  Created by devtools-logicwind on 2025/3/03.
 //
-//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//  Copyright (c) 2025 devtools-logicwind <devtools@logicwind.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,12 +26,28 @@
 
 import UIKit
 
-extension ZLImageEditorWrapper where Base: UICollectionViewCell {
-    static var identifier: String {
-        NSStringFromClass(Base.self)
+extension ZLImageEditorWrapper where Base: UIView {
+    var top: CGFloat {
+        base.frame.minY
     }
     
-    static func register(_ collectionView: UICollectionView) {
-        collectionView.register(Base.self, forCellWithReuseIdentifier: identifier)
+    var bottom: CGFloat {
+        base.frame.maxY
+    }
+    
+    var left: CGFloat {
+        base.frame.minX
+    }
+    
+    var right: CGFloat {
+        base.frame.maxX
+    }
+    
+    var width: CGFloat {
+        base.frame.width
+    }
+    
+    var height: CGFloat {
+        base.frame.height
     }
 }

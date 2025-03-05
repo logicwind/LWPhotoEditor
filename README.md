@@ -1,36 +1,52 @@
-[![Version](https://img.shields.io/github/v/tag/longitachi/ZLImageEditor.svg?color=blue&include_prereleases=&sort=semver)](https://cocoapods.org/pods/ZLImageEditor)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-supported-E57141.svg)](https://swift.org/package-manager/)
-[![License](https://img.shields.io/badge/license-MIT-black)](https://raw.githubusercontent.com/longitachi/ZLImageEditor/master/LICENSE)
+[![Version](https://img.shields.io/github/v/tag/logicwind/LWPhotoEditor.svg?color=blue&include_prereleases=&sort=semver)](https://cocoapods.org/pods/LWPhotoEditor)
+[![License](https://img.shields.io/badge/license-MIT-black)](https://raw.githubusercontent.com/logicwind/LWPhotoEditor/master/LICENSE)
 [![Platform](https://img.shields.io/badge/Platforms-iOS-blue?style=flat)](https://img.shields.io/badge/Platforms-iOS-blue?style=flat)
 ![Language](https://img.shields.io/badge/Language-%20Swift%20-E57141.svg)
 
-<img src="https://github.com/longitachi/ImageFolder/blob/master/ZLImageEditor/ZLImageEditor.png" width = "277" height = "600" div align=center/>
 
----------------
+<img src="./images/LWPhotoEditor.png" width="300" />
 
-ZLImageEditor is a powerful image editor framework. Supports graffiti, cropping, mosaic, text stickers, picture stickers, filters, adjust(brightness, contrast, saturation).
-
-ZLImageEditor is extracted from [ZLPhotoBrowser](https://github.com/longitachi/ZLPhotoBrowser).
+LWPhotoEditor is a powerful image editor framework. Supports draw,cropping, text stickers.
 
 ### Directory
 * [Features](#Features)
+* [Description](#Description)
 * [Requirements](#Requirements)
 * [Usage](#Usage)
 * [Change Log](#ChangeLog)
 * [Languages](#Languages)
-* [Installation(Support Cocoapods/Carthage/SPM)](#Installation)
-* [Support](#Support)
-* [Demo Effect](#DemoEffect)
+* [Installation(Support Cocoapods)](#Installation)
 
 ### <a id="Features"></a>Features
-- [x] Draw (Support custom line color).
-- [x] Crop (Support custom crop ratios).
-- [x] Image sticker (Support custom image sticker container view).
-- [x] Text sticker  (Support custom text color).
-- [x] Mosaic.
-- [x] Filter (Support custom filters).
-- [x] Adjust (Brightness, Contrast, Saturation).
+- [⭐️] Draw (Support custom line color).
+- [⭐️] Crop (Support custom crop ratios).
+- [⭐️] Text sticker  (Support custom text color).
+
+### <a id="Description"></a>Description
+
+#### UI Enhancements in the Editing Screen
+
+- This fork of ZLImageEditor introduces a refined UI layout to enhance the editing experience, with a specific focus on Crop Image, Draw Image, and Text Sticker functionalities.
+
+##### Previous UI (Before Enhancements)
+
+- The image was displayed in full-screen mode, occupying the entire screen.
+Editing tools (Crop, Draw, and Text Stickers) were positioned as overlays on the image at the bottom.
+- The Cancel, Redo, and Undo buttons were placed at the top of the screen, overlaying the image.
+
+##### Updated UI (After Enhancements)
+
+- The image is now centered on the screen, improving focus and usability.
+Editing tools (Crop, Draw, and Text Stickers) are now placed below the image, creating a clean and distraction-free interface.
+- The Cancel, Redo, and Undo buttons remain at the top of the screen but are now separated from the image, removing any visual obstructions.
+
+##### Future Enhancements
+
+- All features of ZLImageEditor remain unchanged in this version, while Crop, Draw, and Text Stickers have been improved by removing overlays and implementing NSLayoutConstraints for a more structured editing screen.
+- Future updates will introduce further UI enhancements, expanded customization options, and refinements to additional functionalities of ZLImageEditor in this fork pod.
+
+##### Further improvements are planned for upcoming releases—stay tuned! 🚀
+
 
 ### <a id="Requirements"></a>Requirements
  | v >= 2.0.0 | iOS 10.0+ |
@@ -42,8 +58,7 @@ ZLImageEditor is extracted from [ZLPhotoBrowser](https://github.com/longitachi/Z
 ### <a id="Usage"></a>Usage
 ```swift
 ZLImageEditorConfiguration.default()
-    .editImageTools([.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter, .adjust])
-    .adjustTools([.brightness, .contrast, .saturation])
+    .editImageTools([.draw, .clip, .textSticker])
 
 ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editModel: editModel) { [weak self] (resImage, editModel) in
     // your code
@@ -51,21 +66,10 @@ ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editMode
 ```
 
 ### <a id="ChangeLog"></a>Change Log
-> [More logs](https://github.com/longitachi/ZLImageEditor/blob/master/CHANGELOG.md)
+> [More logs](https://github.com/logicwind/LWPhotoEditor/blob/master/CHANGELOG.md)
 ```
-● 2.0.3
-  Add:
-    Enhance the user experience of the image cropping interface and optimize the animation effects.
-  Fix:
-    Fix the bug that causes a crash when entering the cropping interface while the app only supports landscape mode.
-● 2.0.2
-  Add:
-    Adapt the text sticker input interface for iPad landscape mode.
-  Fix:
-    Fix the bug where cropping square images to circular shape fails.
-● 2.0.1
-  Add: 
-    Adapt to iOS 17, replace UIGraphicsBeginImageContextWithOptions with UIGraphicsImageRenderer.
+● 0.1.0
+  Refined UI: Centered image, repositioned tools, removed overlays, and added NSLayoutConstraint for better layout.
 ...
 ```
 
@@ -73,15 +77,9 @@ ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editMode
 🇨🇳 Chinese (Simplified/Traditional), 🇺🇸 English, 🇯🇵 Japanese, 🇫🇷 French, 🇩🇪 German, 🇺🇦 Ukranian, 🇷🇺 Russian, 🇻🇳 Vietnamese, 🇰🇷 Korean, 🇲🇾 Malay, 🇮🇹 Italian, 🇮🇩 Indonesian, 🇪🇸 Spanish, 🇵🇹 Portuguese, 🇹🇷 Turkey, 🇸🇦 Arabic, 🇳🇱 Dutch.
 
 ### <a id="Installation"></a>Installation
-There are four ways to use ZLImageEditor in your project:
-
-  - using CocoaPods
-  - using Carthage
-  - using Swift Package Manager
-  - manual install (build frameworks or embed Xcode Project)
 
 #### CocoaPods
-To integrate ZLImageEditor into your Xcode project using CocoaPods, specify it to a target in your Podfile:
+To integrate LWPhotoEditor into your Xcode project using CocoaPods, specify it to a target in your Podfile:
 
 ```
 source 'https://github.com/CocoaPods/Specs.git'
@@ -91,7 +89,7 @@ use_frameworks!
 target 'MyApp' do
   # your other pod
   # ...
-  pod 'ZLImageEditor'
+  pod 'LWPhotoEditor'
 end
 ```
 
@@ -103,27 +101,8 @@ $ pod install
 
 > If you cannot find the latest version, you can execute `pod repo update` first
 
-#### Carthage
-To integrate ZLImageEditor into your Xcode project using Carthage, specify it in your Cartfile:
+### <a id="Credits"></a>🎖Credits  
 
-```
-github "longitachi/ZLImageEditor"
-```
+This is fork of [ZLImageEditor](https://github.com/longitachi/ZLImageEditor.git).  
+Big thanks to the original authors for their contributions! 🚀  
 
-Then, run the following command to build the ZLImageEditor framework:
-
-```
-$ carthage update ZLImageEditor
-```
-
-#### Swift Package Manager
-1. Select File > Swift Packages > Add Package Dependency. Enter https://github.com/longitachi/ZLImageEditor.git in the "Choose Package Repository" dialog.
-2. In the next page, specify the version resolving rule as "Up to Next Major" with "2.0.3" as its earliest version.
-3. After Xcode checking out the source and resolving the version, you can choose the "ZLImageEditor" library and add it to your app target.
-
-### <a id="Support"></a> Support
-* [**★ Star**](#) this repo.
-* Support with <img src="https://github.com/longitachi/ImageFolder/blob/master/ZLPhotoBrowser/ap.png" width = "100" height = "125" /> or <img src="https://github.com/longitachi/ImageFolder/blob/master/ZLPhotoBrowser/wp.png" width = "100" height = "125" /> or <img src="https://github.com/longitachi/ImageFolder/blob/master/ZLPhotoBrowser/pp.png" width = "150" height = "125" />
-
-### <a id="DemoEffect"></a> Demo Effect
-![image](https://github.com/longitachi/ImageFolder/blob/master/ZLImageEditor/editImage.gif)
