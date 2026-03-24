@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 class ZLAnimationUtils: NSObject {
@@ -53,3 +54,4 @@ class ZLAnimationUtils: NSObject {
         return animation
     }
 }
+#endif

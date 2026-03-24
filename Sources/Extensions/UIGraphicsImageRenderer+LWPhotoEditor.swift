@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 public extension ZLImageEditorWrapper where Base: UIGraphicsImageRenderer {
@@ -46,3 +47,4 @@ public extension ZLImageEditorWrapper where Base: UIGraphicsImageRenderer {
         }
     }
 }
+#endif

@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 extension ZLImageEditorWrapper where Base: UIColor {
@@ -74,3 +75,4 @@ extension ZLImageEditorWrapper where Base: UIColor {
         return UIColor(red: r / 255, green: g / 255, blue: b / 255, alpha: a)
     }
 }
+#endif

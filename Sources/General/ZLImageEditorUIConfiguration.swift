@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 public class ZLImageEditorUIConfiguration: NSObject {
@@ -143,3 +144,4 @@ enum ZLCustomImageDeploy {
     case vertical
     case horizontal
 }
+#endif

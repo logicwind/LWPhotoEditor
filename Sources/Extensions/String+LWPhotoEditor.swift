@@ -25,6 +25,7 @@
 //  THE SOFTWARE.
 
 import Foundation
+#if canImport(UIKit)
 import UIKit
 
 extension ZLImageEditorWrapper where Base == String {
@@ -41,3 +42,4 @@ extension ZLImageEditorWrapper where Base == String {
         return CGSize(width: ceil(size.width), height: ceil(size.height))
     }
 }
+#endif
