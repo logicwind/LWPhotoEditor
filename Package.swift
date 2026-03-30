@@ -18,6 +18,7 @@ let package = Package(
             path: "Sources",
             exclude: [
                 "LWPhotoEditor.h",
+                "Info.plist",
                 "General/ZLWeakProxy.h",
                 "General/ZLWeakProxy.m"
             ],
