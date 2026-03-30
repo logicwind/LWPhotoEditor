@@ -15,7 +15,7 @@ LWPhotoEditor is a powerful image editor framework. Supports draw,cropping, text
 * [Usage](#Usage)
 * [Change Log](#ChangeLog)
 * [Languages](#Languages)
-* [Installation(Support Cocoapods)](#Installation)
+* [Installation](#Installation)
 
 ### <a id="Features"></a>Features
 - [⭐️] Draw (Support custom line color).
@@ -66,17 +66,38 @@ ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editMode
 ```
 
 ### <a id="ChangeLog"></a>Change Log
-> [More logs](https://github.com/logicwind/LWPhotoEditor/blob/master/CHANGELOG.md)
+> [Full changelog](https://github.com/logicwind/LWPhotoEditor/blob/master/CHANGELOG.md)
 ```
+● 0.2.0
+  - Added Swift Package Manager (SPM) support.
+  - Added a callback for cancelling the editing session.
+
 ● 0.1.0
-  Refined UI: Centered image, repositioned tools, removed overlays, and added NSLayoutConstraint for better layout.
-...
+  - Refined UI: Centered image, repositioned tools, removed overlays,
+    and added NSLayoutConstraint for better layout.
 ```
 
 ### <a id="Languages"></a>Languages
 🇨🇳 Chinese (Simplified/Traditional), 🇺🇸 English, 🇯🇵 Japanese, 🇫🇷 French, 🇩🇪 German, 🇺🇦 Ukranian, 🇷🇺 Russian, 🇻🇳 Vietnamese, 🇰🇷 Korean, 🇲🇾 Malay, 🇮🇹 Italian, 🇮🇩 Indonesian, 🇪🇸 Spanish, 🇵🇹 Portuguese, 🇹🇷 Turkey, 🇸🇦 Arabic, 🇳🇱 Dutch.
 
 ### <a id="Installation"></a>Installation
+
+#### Swift Package Manager
+To integrate LWPhotoEditor into your Xcode project using Swift Package Manager, select **File > Add Packages** and enter the repository URL:
+
+```
+https://github.com/logicwind/LWPhotoEditor.git
+```
+
+Then select the version and add it to your target.
+
+Alternatively, in your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/logicwind/LWPhotoEditor.git", .upToNextMajor(from: "0.2.0"))
+]
+```
 
 #### CocoaPods
 To integrate LWPhotoEditor into your Xcode project using CocoaPods, specify it to a target in your Podfile:
