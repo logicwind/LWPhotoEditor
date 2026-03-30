@@ -26,8 +26,10 @@
 
 import AVKit
 
+#if canImport(UIKit)
 extension ZLImageEditorWrapper where Base == CGFloat {
     var toPi: CGFloat {
         return base / 180 * .pi
     }
 }
+#endif

@@ -26,6 +26,7 @@
 
 #if SWIFT_PACKAGE
 
+#if canImport(UIKit)
 import UIKit
 
 class ZLWeakProxy: NSObject {
@@ -49,4 +50,5 @@ class ZLWeakProxy: NSObject {
     }
 }
 
+#endif
 #endif

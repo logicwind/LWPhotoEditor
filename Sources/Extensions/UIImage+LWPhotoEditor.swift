@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 import Accelerate
 
@@ -409,3 +410,4 @@ public extension ZLImageEditorWrapper where Base: CIImage {
         return UIImage(cgImage: cgImage)
     }
 }
+#endif

@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 // MARK: Edit tool cell
@@ -221,3 +222,4 @@ class ZLAdjustToolCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+#endif

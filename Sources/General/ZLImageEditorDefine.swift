@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 struct ZLImageEditorLayout {
@@ -55,3 +56,4 @@ func deviceSafeAreaInsets() -> UIEdgeInsets {
 func zl_debugPrint(_ message: Any) {
 //    debugPrint(message)
 }
+#endif

@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 /// 滤镜代码参考自 https://github.com/Yummypets/YPImagePicker
@@ -280,3 +281,4 @@ public extension ZLFilter {
     
     @objc static let tonal = ZLFilter(name: "Tonal", filterType: .tonal)
 }
+#endif

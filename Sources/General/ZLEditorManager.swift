@@ -26,6 +26,7 @@
 
 import Foundation
 
+#if canImport(UIKit)
 public enum ZLEditorAction {
     case draw(ZLDrawPath)
     case eraser([ZLDrawPath])
@@ -83,3 +84,4 @@ class ZLEditorManager {
         delegate?.editorManager(self, didUpdateActions: actions, redoActions: redoActions)
     }
 }
+#endif

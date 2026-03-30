@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 // MARK: Draw path
@@ -164,3 +165,4 @@ public class ZLMosaicPath: NSObject {
         linePoints.append(CGPoint(x: point.x / ratio, y: point.y / ratio))
     }
 }
+#endif

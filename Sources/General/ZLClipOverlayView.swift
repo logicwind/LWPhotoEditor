@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 // MARK: 裁剪网格视图
@@ -308,3 +309,4 @@ class ZLClipOverlayView: UIView {
         }
     }
 }
+#endif

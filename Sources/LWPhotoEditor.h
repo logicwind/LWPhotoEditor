@@ -8,7 +8,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <LWPhotoEditor/ZLWeakProxy.h>
+
+#ifdef __OBJC__
+#import "General/ZLWeakProxy.h"
+#endif
 
 //! Project version number for ZLImageEditor.
 FOUNDATION_EXPORT double ZLImageEditorVersionNumber;

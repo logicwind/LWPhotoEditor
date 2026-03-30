@@ -26,6 +26,7 @@
 
 import Foundation
 
+#if canImport(UIKit)
 @objc public enum ZLImageEditorLanguageType: Int {
     case system
     case chineseSimplified
@@ -177,3 +178,4 @@ func localLanguageTextValue(_ key: ZLLocalLanguageKey) -> String {
     
     return Bundle.zlLocalizedString(key.rawValue)
 }
+#endif

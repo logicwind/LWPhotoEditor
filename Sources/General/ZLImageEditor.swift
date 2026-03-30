@@ -25,6 +25,7 @@
 //  THE SOFTWARE.
 
 import Foundation
+#if canImport(UIKit)
 import UIKit
 
 let version = "2.0.3"
@@ -68,3 +69,4 @@ extension UIGraphicsImageRenderer: ZLImageEditorCompatible { }
 
 extension String: ZLImageEditorCompatibleValue { }
 extension CGFloat: ZLImageEditorCompatibleValue { }
+#endif
