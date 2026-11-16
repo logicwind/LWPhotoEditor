@@ -28,6 +28,7 @@
 		985A2D7C282A85B5007AE0C6 /* Arvil_Sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 985A2D69282A85B5007AE0C6 /* Arvil_Sans.ttf */; };
 		985A2D7E282A8BC5007AE0C6 /* FontChooserContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A2D7D282A8BC5007AE0C6 /* FontChooserContainerView.swift */; };
 		E4020928256BA9D70077F5DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4020927256BA9D70077F5DC /* AppDelegate.swift */; };
+		E4C0FFEE2A00000000000002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C0FFEE2A00000000000001 /* SceneDelegate.swift */; };
 		E402092C256BA9D70077F5DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E402092B256BA9D70077F5DC /* ViewController.swift */; };
 		E402092F256BA9D70077F5DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E402092D256BA9D70077F5DC /* Main.storyboard */; };
 		E4020931256BA9D90077F5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4020930256BA9D90077F5DC /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		985A2D7D282A8BC5007AE0C6 /* FontChooserContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontChooserContainerView.swift; sourceTree = "<group>"; };
 		E4020924256BA9D70077F5DC /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4020927256BA9D70077F5DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4C0FFEE2A00000000000001 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E402092B256BA9D70077F5DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E402092E256BA9D70077F5DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4020930256BA9D90077F5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				985A2D56282A85B4007AE0C6 /* Fonts */,
 				E402093E256BAA420077F5DC /* SnapKit */,
 				E4020927256BA9D70077F5DC /* AppDelegate.swift */,
+				E4C0FFEE2A00000000000001 /* SceneDelegate.swift */,
 				E402092B256BA9D70077F5DC /* ViewController.swift */,
 				E4020998256BB2480077F5DC /* ImageStickerContainerView.swift */,
 				985A2D7D282A8BC5007AE0C6 /* FontChooserContainerView.swift */,
@@ -458,6 +461,7 @@
 				E402096C256BAA420077F5DC /* ConstraintInsets.swift in Sources */,
 				E4020975256BAA420077F5DC /* UILayoutSupport+Extensions.swift in Sources */,
 				E4020928256BA9D70077F5DC /* AppDelegate.swift in Sources */,
+				E4C0FFEE2A00000000000002 /* SceneDelegate.swift in Sources */,
 				985A2D7E282A8BC5007AE0C6 /* FontChooserContainerView.swift in Sources */,
 				E4020987256BAA420077F5DC /* ConstraintDirectionalInsets.swift in Sources */,
 				E402096B256BAA420077F5DC /* ConstraintPriorityTarget.swift in Sources */,
@@ -582,7 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -638,7 +642,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -656,7 +660,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47UY3G7UH6;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -677,7 +681,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47UY3G7UH6;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.author                = { 'devtools-logicwind' => 'devtools@logicwind.com' }
   s.source                = {:git => 'https://github.com/logicwind/LWPhotoEditor.git', :tag => s.version}
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '15.0'
 
-  s.swift_versions        = ['5.0', '5.1', '5.2']
+  s.swift_versions        = ['5.0', '5.1', '5.2', '5.9', '6.0']
 
   s.requires_arc          = true
   s.frameworks            = 'UIKit', 'Accelerate'
