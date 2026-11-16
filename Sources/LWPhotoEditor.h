@@ -10,7 +10,11 @@
 #import <Foundation/Foundation.h>
 
 #ifdef __OBJC__
+#if __has_include(<LWPhotoEditor/ZLWeakProxy.h>)
+#import <LWPhotoEditor/ZLWeakProxy.h>
+#else
 #import "General/ZLWeakProxy.h"
+#endif
 #endif
 
 //! Project version number for ZLImageEditor.

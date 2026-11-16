@@ -69,8 +69,8 @@
 		E4020987256BAA420077F5DC /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4020962256BAA420077F5DC /* ConstraintDirectionalInsets.swift */; };
 		E4020988256BAA420077F5DC /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4020963256BAA420077F5DC /* ConstraintLayoutSupportDSL.swift */; };
 		E4020989256BAA420077F5DC /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4020964256BAA420077F5DC /* ConstraintMakerRelatable.swift */; };
-		E402098F256BAC560077F5DC /* ZLImageEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E402098E256BAC560077F5DC /* ZLImageEditor.framework */; };
-		E4020990256BAC560077F5DC /* ZLImageEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E402098E256BAC560077F5DC /* ZLImageEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E402098F256BAC560077F5DC /* LWPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E402098E256BAC560077F5DC /* LWPhotoEditor.framework */; };
+		E4020990256BAC560077F5DC /* LWPhotoEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E402098E256BAC560077F5DC /* LWPhotoEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4020999256BB2480077F5DC /* ImageStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4020998256BB2480077F5DC /* ImageStickerContainerView.swift */; };
 		E4CAF827256CACE800C7B04E /* CustomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CAF826256CACE800C7B04E /* CustomFilter.swift */; };
 /* End PBXBuildFile section */
@@ -82,7 +82,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E4020990256BAC560077F5DC /* ZLImageEditor.framework in Embed Frameworks */,
+				E4020990256BAC560077F5DC /* LWPhotoEditor.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,7 +155,7 @@
 		E4020962256BAA420077F5DC /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		E4020963256BAA420077F5DC /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		E4020964256BAA420077F5DC /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
-		E402098E256BAC560077F5DC /* ZLImageEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ZLImageEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E402098E256BAC560077F5DC /* LWPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LWPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4020998256BB2480077F5DC /* ImageStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStickerContainerView.swift; sourceTree = "<group>"; };
 		E4CAF826256CACE800C7B04E /* CustomFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFilter.swift; sourceTree = "<group>"; };
 		FD88C1F628C739C100C0C0F2 /* Example-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example-bridge.h"; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E402098F256BAC560077F5DC /* ZLImageEditor.framework in Frameworks */,
+				E402098F256BAC560077F5DC /* LWPhotoEditor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +317,7 @@
 		E402098D256BAC560077F5DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E402098E256BAC560077F5DC /* ZLImageEditor.framework */,
+				E402098E256BAC560077F5DC /* LWPhotoEditor.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
