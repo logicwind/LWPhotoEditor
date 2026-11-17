@@ -129,7 +129,7 @@ class ZLClipImageViewController: UIViewController {
     lazy var cancelBtn: ZLEnlargeButton = {
         let btn = ZLEnlargeButton(type: .custom)
         btn.setImage(.zl.getImage("zl_close"), for: .normal)
-        btn.adjustsImageWhenHighlighted = false
+        btn.setImage(btn.image(for: .normal), for: .highlighted)
         btn.enlargeInset = 20
         btn.addTarget(self, action: #selector(cancelBtnClick), for: .touchUpInside)
         return btn
@@ -148,7 +148,7 @@ class ZLClipImageViewController: UIViewController {
     lazy var doneBtn: ZLEnlargeButton = {
         let btn = ZLEnlargeButton(type: .custom)
         btn.setImage(.zl.getImage("zl_right"), for: .normal)
-        btn.adjustsImageWhenHighlighted = false
+        btn.setImage(btn.image(for: .normal), for: .highlighted)
         btn.enlargeInset = 20
         btn.addTarget(self, action: #selector(doneBtnClick), for: .touchUpInside)
         return btn
@@ -157,7 +157,7 @@ class ZLClipImageViewController: UIViewController {
     lazy var rotateBtn: ZLEnlargeButton = {
         let btn = ZLEnlargeButton(type: .custom)
         btn.setImage(.zl.getImage("zl_rotateimage"), for: .normal)
-        btn.adjustsImageWhenHighlighted = false
+        btn.setImage(btn.image(for: .normal), for: .highlighted)
         btn.enlargeInset = 20
         btn.addTarget(self, action: #selector(rotateBtnClick), for: .touchUpInside)
         return btn
