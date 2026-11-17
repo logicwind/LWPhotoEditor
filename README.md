@@ -49,11 +49,9 @@ Editing tools (Crop, Draw, and Text Stickers) are now placed below the image, cr
 
 
 ### <a id="Requirements"></a>Requirements
- | v >= 2.0.0 | iOS 10.0+ |
- | --- | --- |
- | v \< 2.0.0 | iOS 9.0+ |
- * Swift 5.x
- * Xcode 12.x
+ * iOS 15.0+ (tested up to iOS 27)
+ * Swift 5.9+
+ * Xcode 15+ (Xcode 27 supported)
 
 ### <a id="Usage"></a>Usage
 ```swift

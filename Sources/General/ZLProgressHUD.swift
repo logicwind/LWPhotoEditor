@@ -86,7 +86,7 @@ public class ZLProgressHUD: UIView {
         loadingView.layer.add(animation, forKey: nil)
     }
     
-    @objc public func show(in view: UIView? = UIApplication.shared.keyWindow) {
+    @objc public func show(in view: UIView? = zlKeyWindow()) {
         guard Thread.isMainThread else {
             DispatchQueue.main.async {
                 self.show(in: view)

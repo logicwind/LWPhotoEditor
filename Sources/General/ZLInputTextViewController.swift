@@ -194,7 +194,7 @@ class ZLInputTextViewController: UIViewController {
         
         // iPad图片由竖屏切换到横屏时候填充方式会有点异常，这里重置下
         if deviceIsiPad() {
-            if UIApplication.shared.statusBarOrientation.isLandscape {
+            if view.window?.windowScene?.interfaceOrientation.isLandscape ?? (view.bounds.width > view.bounds.height) {
                 bgImageView.contentMode = .scaleAspectFill
             } else {
                 bgImageView.contentMode = .scaleAspectFit

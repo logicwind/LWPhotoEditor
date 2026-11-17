@@ -43,14 +43,16 @@ func deviceIsiPad() -> Bool {
     return UIDevice.current.userInterfaceIdiom == .pad
 }
 
+/// Key window of the foreground-active window scene (scene-lifecycle safe replacement for `UIApplication.keyWindow`).
+@usableFromInline
+func zlKeyWindow() -> UIWindow? {
+    let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+    let scene = scenes.first { $0.activationState == .foregroundActive } ?? scenes.first
+    return scene?.keyWindow ?? scene?.windows.first
+}
+
 func deviceSafeAreaInsets() -> UIEdgeInsets {
-    var insets: UIEdgeInsets = .zero
-    
-    if #available(iOS 11, *) {
-        insets = UIApplication.shared.keyWindow?.safeAreaInsets ?? .zero
-    }
-    
-    return insets
+    return zlKeyWindow()?.safeAreaInsets ?? .zero
 }
 
 func zl_debugPrint(_ message: Any) {

@@ -65,4 +65,19 @@ open class ZLEnlargeButton: UIButton {
         return rect
     }
 }
+
+/// Button that grows its intrinsic size by `contentPadding`, replacing the deprecated `contentEdgeInsets`.
+class ZLPaddedButton: UIButton {
+    var contentPadding: UIEdgeInsets = .zero {
+        didSet { invalidateIntrinsicContentSize() }
+    }
+
+    override var intrinsicContentSize: CGSize {
+        let size = super.intrinsicContentSize
+        return CGSize(
+            width: size.width + contentPadding.left + contentPadding.right,
+            height: size.height + contentPadding.top + contentPadding.bottom
+        )
+    }
+}
 #endif

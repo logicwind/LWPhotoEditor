@@ -174,7 +174,8 @@ open class ZLEditImageViewController: UIViewController {
     }()
     
     open lazy var doneBtn: UIButton = {
-        let btn = UIButton(type: .custom)
+        let btn = ZLPaddedButton(type: .custom)
+        btn.contentPadding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         btn.titleLabel?.font = ZLImageEditorLayout.bottomToolTitleFont
         btn.backgroundColor = .zl.editDoneBtnBgColor
         btn.setTitle(localLanguageTextValue(.editFinish), for: .normal)
@@ -189,7 +190,7 @@ open class ZLEditImageViewController: UIViewController {
         let btn = ZLEnlargeButton(type: .custom)
         btn.setImage(.zl.getImage("zl_undo_disable"), for: .disabled)
         btn.setImage(.zl.getImage("zl_undo"), for: .normal)
-        btn.adjustsImageWhenHighlighted = false
+        btn.setImage(btn.image(for: .normal), for: .highlighted)
         btn.isEnabled = !editorManager.actions.isEmpty
         btn.enlargeInset = 8
         btn.addTarget(self, action: #selector(undoBtnClick), for: .touchUpInside)
@@ -200,7 +201,7 @@ open class ZLEditImageViewController: UIViewController {
         let btn = ZLEnlargeButton(type: .custom)
         btn.setImage(.zl.getImage("zl_redo"), for: .normal)
         btn.setImage(.zl.getImage("zl_redo_disable"), for: .disabled)
-        btn.adjustsImageWhenHighlighted = false
+        btn.setImage(btn.image(for: .normal), for: .highlighted)
         btn.isEnabled = editorManager.actions.count != editorManager.redoActions.count
         btn.enlargeInset = 8
         btn.addTarget(self, action: #selector(redoBtnClick), for: .touchUpInside)
@@ -772,9 +773,6 @@ open class ZLEditImageViewController: UIViewController {
             doneBtn.trailingAnchor.constraint(equalTo: bottomShadowView.trailingAnchor, constant: -16),
             doneBtn.centerYAnchor.constraint(equalTo: bottomShadowView.centerYAnchor),
         ])
-        
-        doneBtn.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        
         //         Additional setup for tools (draw, filter, adjust, mosaic, imageSticker, textSticker) can be added here
         //         ...
         if tools.contains(.draw) {
